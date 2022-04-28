@@ -29,9 +29,11 @@ public class UserServiceImpl  implements UsersService{
 		List<String> dataResponse=new ArrayList<>();
 		for(ExternalUserResponseDataDto data: externalUserResponseDto.getData()) {
 			str="";
-			str=str+data.getId()+"|"+data.getLastName()+"|"+data.getEmail();
-			userResponseDto.setData(dataResponse);
+			str=str+data.getId()+"|"+data.getLast_name()+"|"+data.getEmail();
+			dataResponse.add(str);
 		}
+		userResponseDto.setData(dataResponse);
+
 		return userResponseDto;
 		
 		
